@@ -63,7 +63,13 @@ function init(options, onReady/*(dicts)*/) {
 /**
  *@param {string} msgKey The key to get a message template from the locale dictionary.
  *@param {string} msgSubstrsDict The dictionary of strings to insert into the message template.
- *@param {string} locale The locale of the dictionary which the message template should be got from.
+ *@param {string} options The locale of the string will be determined depending on this parameter. 
+                          It may be provided in different forms such as:
+                            - directly the locale name(or one of the LOCALES enum values)
+                            - the text of the Accept-Language HTTP header
+                            - a function accepting the header name and returning its content
+                            - an object where one of the fields is the locale name
+                            - an object where the keys are HTTP headers' names and the values are these headers' content
  *@returns {string} The message with the substrings inserted.
  */
 
