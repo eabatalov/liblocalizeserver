@@ -18,4 +18,4 @@ The locale of the returned string is determined depending on specified options
 
 ## Install
 
-`npm install git+https://git@github.com/LizaTretyakova/liblocalizeserver.git`
+`npm install git+https://github.com/eabatalov/liblocalizeserver.git`
