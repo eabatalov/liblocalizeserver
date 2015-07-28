@@ -1,4 +1,4 @@
-var lls = require('liblocalizeserver');
+var lls = require('../src/liblocalizeserver.js');
 var init = lls.init;
 var get = lls.get;
 
@@ -243,6 +243,17 @@ function onReady(dicts) {
     for(var i = 0; i < localeDictKeys.length; ++i) {
         var key = localeDictKeys[i];
         console.log(get(key, localeDictAnswers[key], getHeader));
+    }
+    
+    console.log("-----USING-HEADERS-ENUM-----");
+    var headersEnum = {'Accept-Charset': 'Accept-Charset: iso-8859-5, unicode-1-1;q=0.8',
+                       'Accept-Encoding': 'Accept-Encoding: compress, gzip',
+                       'Accept-Language': pseudoHeader,
+                       'Accept-Ranges': 'Accept-Ranges: bytes'
+    };
+    for(var i = 0; i < localeDictKeys.length; ++i) {
+        var key = localeDictKeys[i];
+        console.log(get(key, localeDictAnswers[key], headersEnum));
     }
     
     
